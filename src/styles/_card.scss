@@ -6,6 +6,8 @@
   border-radius: $border-radius;
   padding: 32px 16px 16px;
   font-family: $font-main;
+  transition: transform 0.3s ease;
+  position: relative;
 
   &__img {
     display: block;
@@ -21,6 +23,7 @@
     font-size: 12px;
     line-height: 18px;
     margin: 0 0 4px;
+    transition: color 0.3s ease;
   }
 
   &__code {
@@ -90,13 +93,22 @@
     box-sizing: border-box;
     border-radius: $border-radius;
     transition:
-      background-color 0.2s ease,
-      border-color 0.2s ease;
+      background-color 0.3s ease,
+      color 0.3s ease;
 
     &:hover {
-      background-color: #f3f3f3;
+      background-color: #fff;
       border: 1px solid $color-blue;
       color: $color-blue;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.2);
+    z-index: 10;
+
+    .card__title {
+      color: #34568b;
     }
   }
 }
